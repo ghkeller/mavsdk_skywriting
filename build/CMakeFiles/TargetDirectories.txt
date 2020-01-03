@@ -1,0 +1,11 @@
+/home/gordon/Documents/gitrepos/MAVSDK/example/offboard_skywriting_mode/build/CMakeFiles/edit_cache.dir
+/home/gordon/Documents/gitrepos/MAVSDK/example/offboard_skywriting_mode/build/CMakeFiles/rebuild_cache.dir
+/home/gordon/Documents/gitrepos/MAVSDK/example/offboard_skywriting_mode/build/CMakeFiles/offboard_skywriting.dir
+/home/gordon/Documents/gitrepos/MAVSDK/example/offboard_skywriting_mode/build/src/CMakeFiles/edit_cache.dir
+/home/gordon/Documents/gitrepos/MAVSDK/example/offboard_skywriting_mode/build/src/CMakeFiles/MissionVectorOperationsLib.dir
+/home/gordon/Documents/gitrepos/MAVSDK/example/offboard_skywriting_mode/build/src/CMakeFiles/LetterWaypointLib.dir
+/home/gordon/Documents/gitrepos/MAVSDK/example/offboard_skywriting_mode/build/src/CMakeFiles/rebuild_cache.dir
+/home/gordon/Documents/gitrepos/MAVSDK/example/offboard_skywriting_mode/build/src/CMakeFiles/TrajectoryLib.dir
+/home/gordon/Documents/gitrepos/MAVSDK/example/offboard_skywriting_mode/build/test/CMakeFiles/rebuild_cache.dir
+/home/gordon/Documents/gitrepos/MAVSDK/example/offboard_skywriting_mode/build/test/CMakeFiles/edit_cache.dir
+/home/gordon/Documents/gitrepos/MAVSDK/example/offboard_skywriting_mode/build/test/CMakeFiles/runTrajectoryTests.dir

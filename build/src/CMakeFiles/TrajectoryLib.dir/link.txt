@@ -1,0 +1,2 @@
+/usr/bin/ar qc libTrajectoryLib.a  CMakeFiles/TrajectoryLib.dir/Trajectory.cpp.o
+/usr/bin/ranlib libTrajectoryLib.a
