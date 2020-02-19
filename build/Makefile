@@ -124,17 +124,17 @@ offboard_skywriting/fast:
 .PHONY : offboard_skywriting/fast
 
 #=============================================================================
-# Target rules for targets named MissionVectorOperationsLib
+# Target rules for targets named TrajectoryLib
 
 # Build rule for target.
-MissionVectorOperationsLib: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 MissionVectorOperationsLib
-.PHONY : MissionVectorOperationsLib
+TrajectoryLib: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 TrajectoryLib
+.PHONY : TrajectoryLib
 
 # fast build rule for target.
-MissionVectorOperationsLib/fast:
-	$(MAKE) -f src/CMakeFiles/MissionVectorOperationsLib.dir/build.make src/CMakeFiles/MissionVectorOperationsLib.dir/build
-.PHONY : MissionVectorOperationsLib/fast
+TrajectoryLib/fast:
+	$(MAKE) -f src/CMakeFiles/TrajectoryLib.dir/build.make src/CMakeFiles/TrajectoryLib.dir/build
+.PHONY : TrajectoryLib/fast
 
 #=============================================================================
 # Target rules for targets named LetterWaypointLib
@@ -150,17 +150,17 @@ LetterWaypointLib/fast:
 .PHONY : LetterWaypointLib/fast
 
 #=============================================================================
-# Target rules for targets named TrajectoryLib
+# Target rules for targets named MissionVectorLib
 
 # Build rule for target.
-TrajectoryLib: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 TrajectoryLib
-.PHONY : TrajectoryLib
+MissionVectorLib: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 MissionVectorLib
+.PHONY : MissionVectorLib
 
 # fast build rule for target.
-TrajectoryLib/fast:
-	$(MAKE) -f src/CMakeFiles/TrajectoryLib.dir/build.make src/CMakeFiles/TrajectoryLib.dir/build
-.PHONY : TrajectoryLib/fast
+MissionVectorLib/fast:
+	$(MAKE) -f src/CMakeFiles/MissionVectorLib.dir/build.make src/CMakeFiles/MissionVectorLib.dir/build
+.PHONY : MissionVectorLib/fast
 
 #=============================================================================
 # Target rules for targets named runTrajectoryTests
@@ -211,9 +211,9 @@ help:
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
 	@echo "... offboard_skywriting"
-	@echo "... MissionVectorOperationsLib"
-	@echo "... LetterWaypointLib"
 	@echo "... TrajectoryLib"
+	@echo "... LetterWaypointLib"
+	@echo "... MissionVectorLib"
 	@echo "... runTrajectoryTests"
 	@echo "... src/offboard_skywriting_main.o"
 	@echo "... src/offboard_skywriting_main.i"

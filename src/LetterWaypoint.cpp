@@ -2,7 +2,7 @@
 
 #include <LetterWaypoint.h>
 #include <Trajectory.h>
-#include <MissionVectorOperations.h>
+#include <MissionVector.h>
 
 #include <iostream>
 
@@ -15,12 +15,6 @@ LetterWaypoints::LetterWaypoints()
 {
 	//initialize the lookup table
 	LetterWaypoints::initializeLookupTable();
-
-	// if success {
-
-	// } else {
-
-	// }
 }
 
 bool LetterWaypoints::initializeLookupTable()
@@ -251,6 +245,14 @@ bool LetterWaypoints::initializeLookupTable()
         new TrajStraight({0.0f,3.0f,0.0f,0.0f}),
         new TrajStraight({0.0f,0.0f,3.0f,0.0f}),
         new TrajStraight({0.0f,3.0f,3.0f,0.0f})},
+        3.0f);
+
+    characterLookupTable['1'] = new Letter(
+        {new TrajNoPref({0.0f,0.0f,3.0f,0.0f}),
+        new TrajStraight({0.0f,2.0f,3.0f,0.0f}),
+        new TrajNoPref({0.0f,1.0f,3.0f,0.0f}),
+        new TrajStraight({0.0f,1.0f,0.0f,0.0f}),
+        new TrajStraight({0.0f,0.0f,1.0f,0.0f})},
         3.0f);
 
     cout << "Finished initializing lookup table." << endl;

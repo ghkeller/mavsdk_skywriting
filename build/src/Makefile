@@ -111,19 +111,19 @@ depend:
 .PHONY : depend
 
 # Convenience name for target.
-src/CMakeFiles/MissionVectorOperationsLib.dir/rule:
-	cd /home/gordon/Documents/gitrepos/MAVSDK/example/offboard_skywriting_mode/build && $(MAKE) -f CMakeFiles/Makefile2 src/CMakeFiles/MissionVectorOperationsLib.dir/rule
-.PHONY : src/CMakeFiles/MissionVectorOperationsLib.dir/rule
+src/CMakeFiles/TrajectoryLib.dir/rule:
+	cd /home/gordon/Documents/gitrepos/MAVSDK/example/offboard_skywriting_mode/build && $(MAKE) -f CMakeFiles/Makefile2 src/CMakeFiles/TrajectoryLib.dir/rule
+.PHONY : src/CMakeFiles/TrajectoryLib.dir/rule
 
 # Convenience name for target.
-MissionVectorOperationsLib: src/CMakeFiles/MissionVectorOperationsLib.dir/rule
+TrajectoryLib: src/CMakeFiles/TrajectoryLib.dir/rule
 
-.PHONY : MissionVectorOperationsLib
+.PHONY : TrajectoryLib
 
 # fast build rule for target.
-MissionVectorOperationsLib/fast:
-	cd /home/gordon/Documents/gitrepos/MAVSDK/example/offboard_skywriting_mode/build && $(MAKE) -f src/CMakeFiles/MissionVectorOperationsLib.dir/build.make src/CMakeFiles/MissionVectorOperationsLib.dir/build
-.PHONY : MissionVectorOperationsLib/fast
+TrajectoryLib/fast:
+	cd /home/gordon/Documents/gitrepos/MAVSDK/example/offboard_skywriting_mode/build && $(MAKE) -f src/CMakeFiles/TrajectoryLib.dir/build.make src/CMakeFiles/TrajectoryLib.dir/build
+.PHONY : TrajectoryLib/fast
 
 # Convenience name for target.
 src/CMakeFiles/LetterWaypointLib.dir/rule:
@@ -141,19 +141,19 @@ LetterWaypointLib/fast:
 .PHONY : LetterWaypointLib/fast
 
 # Convenience name for target.
-src/CMakeFiles/TrajectoryLib.dir/rule:
-	cd /home/gordon/Documents/gitrepos/MAVSDK/example/offboard_skywriting_mode/build && $(MAKE) -f CMakeFiles/Makefile2 src/CMakeFiles/TrajectoryLib.dir/rule
-.PHONY : src/CMakeFiles/TrajectoryLib.dir/rule
+src/CMakeFiles/MissionVectorLib.dir/rule:
+	cd /home/gordon/Documents/gitrepos/MAVSDK/example/offboard_skywriting_mode/build && $(MAKE) -f CMakeFiles/Makefile2 src/CMakeFiles/MissionVectorLib.dir/rule
+.PHONY : src/CMakeFiles/MissionVectorLib.dir/rule
 
 # Convenience name for target.
-TrajectoryLib: src/CMakeFiles/TrajectoryLib.dir/rule
+MissionVectorLib: src/CMakeFiles/MissionVectorLib.dir/rule
 
-.PHONY : TrajectoryLib
+.PHONY : MissionVectorLib
 
 # fast build rule for target.
-TrajectoryLib/fast:
-	cd /home/gordon/Documents/gitrepos/MAVSDK/example/offboard_skywriting_mode/build && $(MAKE) -f src/CMakeFiles/TrajectoryLib.dir/build.make src/CMakeFiles/TrajectoryLib.dir/build
-.PHONY : TrajectoryLib/fast
+MissionVectorLib/fast:
+	cd /home/gordon/Documents/gitrepos/MAVSDK/example/offboard_skywriting_mode/build && $(MAKE) -f src/CMakeFiles/MissionVectorLib.dir/build.make src/CMakeFiles/MissionVectorLib.dir/build
+.PHONY : MissionVectorLib/fast
 
 LetterWaypoint.o: LetterWaypoint.cpp.o
 
@@ -182,32 +182,32 @@ LetterWaypoint.cpp.s:
 	cd /home/gordon/Documents/gitrepos/MAVSDK/example/offboard_skywriting_mode/build && $(MAKE) -f src/CMakeFiles/LetterWaypointLib.dir/build.make src/CMakeFiles/LetterWaypointLib.dir/LetterWaypoint.cpp.s
 .PHONY : LetterWaypoint.cpp.s
 
-MissionVectorOperations.o: MissionVectorOperations.cpp.o
+MissionVector.o: MissionVector.cpp.o
 
-.PHONY : MissionVectorOperations.o
+.PHONY : MissionVector.o
 
 # target to build an object file
-MissionVectorOperations.cpp.o:
-	cd /home/gordon/Documents/gitrepos/MAVSDK/example/offboard_skywriting_mode/build && $(MAKE) -f src/CMakeFiles/MissionVectorOperationsLib.dir/build.make src/CMakeFiles/MissionVectorOperationsLib.dir/MissionVectorOperations.cpp.o
-.PHONY : MissionVectorOperations.cpp.o
+MissionVector.cpp.o:
+	cd /home/gordon/Documents/gitrepos/MAVSDK/example/offboard_skywriting_mode/build && $(MAKE) -f src/CMakeFiles/MissionVectorLib.dir/build.make src/CMakeFiles/MissionVectorLib.dir/MissionVector.cpp.o
+.PHONY : MissionVector.cpp.o
 
-MissionVectorOperations.i: MissionVectorOperations.cpp.i
+MissionVector.i: MissionVector.cpp.i
 
-.PHONY : MissionVectorOperations.i
+.PHONY : MissionVector.i
 
 # target to preprocess a source file
-MissionVectorOperations.cpp.i:
-	cd /home/gordon/Documents/gitrepos/MAVSDK/example/offboard_skywriting_mode/build && $(MAKE) -f src/CMakeFiles/MissionVectorOperationsLib.dir/build.make src/CMakeFiles/MissionVectorOperationsLib.dir/MissionVectorOperations.cpp.i
-.PHONY : MissionVectorOperations.cpp.i
+MissionVector.cpp.i:
+	cd /home/gordon/Documents/gitrepos/MAVSDK/example/offboard_skywriting_mode/build && $(MAKE) -f src/CMakeFiles/MissionVectorLib.dir/build.make src/CMakeFiles/MissionVectorLib.dir/MissionVector.cpp.i
+.PHONY : MissionVector.cpp.i
 
-MissionVectorOperations.s: MissionVectorOperations.cpp.s
+MissionVector.s: MissionVector.cpp.s
 
-.PHONY : MissionVectorOperations.s
+.PHONY : MissionVector.s
 
 # target to generate assembly for a file
-MissionVectorOperations.cpp.s:
-	cd /home/gordon/Documents/gitrepos/MAVSDK/example/offboard_skywriting_mode/build && $(MAKE) -f src/CMakeFiles/MissionVectorOperationsLib.dir/build.make src/CMakeFiles/MissionVectorOperationsLib.dir/MissionVectorOperations.cpp.s
-.PHONY : MissionVectorOperations.cpp.s
+MissionVector.cpp.s:
+	cd /home/gordon/Documents/gitrepos/MAVSDK/example/offboard_skywriting_mode/build && $(MAKE) -f src/CMakeFiles/MissionVectorLib.dir/build.make src/CMakeFiles/MissionVectorLib.dir/MissionVector.cpp.s
+.PHONY : MissionVector.cpp.s
 
 Trajectory.o: Trajectory.cpp.o
 
@@ -243,16 +243,16 @@ help:
 	@echo "... clean"
 	@echo "... depend"
 	@echo "... edit_cache"
-	@echo "... MissionVectorOperationsLib"
-	@echo "... LetterWaypointLib"
-	@echo "... rebuild_cache"
 	@echo "... TrajectoryLib"
+	@echo "... LetterWaypointLib"
+	@echo "... MissionVectorLib"
+	@echo "... rebuild_cache"
 	@echo "... LetterWaypoint.o"
 	@echo "... LetterWaypoint.i"
 	@echo "... LetterWaypoint.s"
-	@echo "... MissionVectorOperations.o"
-	@echo "... MissionVectorOperations.i"
-	@echo "... MissionVectorOperations.s"
+	@echo "... MissionVector.o"
+	@echo "... MissionVector.i"
+	@echo "... MissionVector.s"
 	@echo "... Trajectory.o"
 	@echo "... Trajectory.i"
 	@echo "... Trajectory.s"

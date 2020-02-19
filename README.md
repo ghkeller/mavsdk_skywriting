@@ -47,4 +47,5 @@ This command will initialize vehicle takeoff sequence (if not already airborne) 
 - Add flags/modifiers for skywriting setting #defines in main
 - Add safety protocols
 - Create GTests for each library
+- Add external instrument (LED, smoke machine) controls (refer to https://ardupilot.org/copter/docs/common-external-leds.html -- even though this reference is for ardupilot, should be a programming option for PX4)
 

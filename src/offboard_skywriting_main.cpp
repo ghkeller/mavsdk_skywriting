@@ -26,7 +26,8 @@
 #include <Common.h>
 #include <LetterWaypoint.h>
 #include <Trajectory.h>
-#include <MissionVectorOperations.h>
+#include <MissionVector.h>
+#include <Safeguard.h>
 
 using namespace mavsdk;
 using std::this_thread::sleep_for;
@@ -68,6 +69,7 @@ void usage(std::string bin_name)
 
 int main(int argc, char** argv)
 {
+	//instatiate vars
     Mavsdk dc;
     std::string connection_url;
     std::string mission_string = "";
@@ -76,16 +78,13 @@ int main(int argc, char** argv)
     // initialize our lookup table
     _letters = new LetterWaypoints();
 
-    //mavsdk_skywriting::TrajNoPref tnp({0.0f,0.0f,0.0f,0.0f});
-    std::cout << "got here" << std::endl;
-    std::vector<Letter *> _mission_letters;
-    std::cout << "and here" << std::endl;
     
+    MissionVector *mission_letters;  
     if (argc == 3) {
+
         //process the mission string, returning a vector of position setpoints
-        _mission_letters = MissionVectorOperations::stringToMissionVec(argv[2], LETTER_HEIGHT,
+        mission_letters = new MissionVector(argv[2], LETTER_HEIGHT,
     LETTER_SPACING, ROW_SPACING, SCALE_FACTOR, WHITESPACE_WIDTH);
-        std::cout << "and here" << std::endl;
     	//establish connection with the vehicle
         connection_url = argv[1];
         connection_result = dc.add_any_connection(connection_url);
@@ -94,6 +93,7 @@ int main(int argc, char** argv)
         return 1;
     }
 
+    // check if connection to vehicle worked
     if (connection_result != ConnectionResult::SUCCESS) {
         std::cout << ERROR_CONSOLE_TEXT
                   << "Connection failed: " << connection_result_str(connection_result)
@@ -112,7 +112,9 @@ int main(int argc, char** argv)
     auto action = std::make_shared<Action>(system);
     auto offboard = std::make_shared<Offboard>(system);
     auto telemetry = std::make_shared<Telemetry>(system);
+    auto geofence = std::make_shared<Geofence>(system)
 
+    // vehicle will need to initialize before we can take control
     while (!telemetry->health_all_ok()) {
         std::cout << "Waiting for system to be ready" << std::endl;
         sleep_for(seconds(1));
@@ -135,12 +137,16 @@ int main(int argc, char** argv)
 	    sleep_for(seconds(50));
 	}
 
+    //set a geofence for the missions
+    Safeguard::setGeofence({0.0f,0.0f,0.0f,0.0f}, 0.0f, 0.0f, 0.0f, geofence);
+
     //  using local NED co-ordinates
-    bool ret = MissionVectorOperations::execute(offboard, telemetry, _mission_letters, ERR_COMP);
+    bool ret = mission_letters->execute(offboard, telemetry, ERR_COMP);
     if (ret == false) {
         return EXIT_FAILURE;
     }
 
+    // land after we've completed the mission
     const Action::Result land_result = action->land();
     action_error_exit(land_result, "Landing failed");
 

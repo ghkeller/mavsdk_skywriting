@@ -3,7 +3,7 @@
 
 src/CMakeFiles/TrajectoryLib.dir/Trajectory.cpp.o
  ../src/../include/LetterWaypoint.h
- ../src/../include/MissionVectorOperations.h
+ ../src/../include/MissionVector.h
  ../src/../include/Trajectory.h
  ../src/../include/pid_control.h
  /home/gordon/Documents/gitrepos/MAVSDK/example/offboard_skywriting_mode/src/Trajectory.cpp

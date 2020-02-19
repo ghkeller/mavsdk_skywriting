@@ -91,7 +91,7 @@ offboard_skywriting_EXTERNAL_OBJECTS =
 offboard_skywriting: CMakeFiles/offboard_skywriting.dir/src/offboard_skywriting_main.cpp.o
 offboard_skywriting: CMakeFiles/offboard_skywriting.dir/build.make
 offboard_skywriting: src/libLetterWaypointLib.a
-offboard_skywriting: src/libMissionVectorOperationsLib.a
+offboard_skywriting: src/libMissionVectorLib.a
 offboard_skywriting: src/libTrajectoryLib.a
 offboard_skywriting: /usr/local/lib/libmavsdk_action.so
 offboard_skywriting: /usr/local/lib/libmavsdk_telemetry.so

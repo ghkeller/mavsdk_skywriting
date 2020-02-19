@@ -1,0 +1,2 @@
+/usr/bin/ar qc libMissionVectorLib.a  CMakeFiles/MissionVectorLib.dir/MissionVector.cpp.o
+/usr/bin/ranlib libMissionVectorLib.a

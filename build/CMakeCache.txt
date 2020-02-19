@@ -193,6 +193,9 @@ LetterWaypointLib_LIB_DEPENDS:STATIC=general;MAVSDK::mavsdk_offboard;general;MAV
 MAVSDK_DIR:PATH=/usr/local/lib/cmake/MAVSDK
 
 //Dependencies for the target
+MissionVectorLib_LIB_DEPENDS:STATIC=general;LetterWaypointLib;general;MAVSDK::mavsdk_action;general;MAVSDK::mavsdk_telemetry;general;MAVSDK::mavsdk_offboard;general;MAVSDK::mavsdk;
+
+//Dependencies for the target
 MissionVectorOperationsLib_LIB_DEPENDS:STATIC=general;LetterWaypointLib;general;MAVSDK::mavsdk_action;general;MAVSDK::mavsdk_telemetry;general;MAVSDK::mavsdk_offboard;general;MAVSDK::mavsdk;
 
 //Dependencies for the target

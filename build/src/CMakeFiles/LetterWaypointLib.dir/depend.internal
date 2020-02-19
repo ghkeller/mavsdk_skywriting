@@ -3,7 +3,7 @@
 
 src/CMakeFiles/LetterWaypointLib.dir/LetterWaypoint.cpp.o
  ../src/../include/LetterWaypoint.h
- ../src/../include/MissionVectorOperations.h
+ ../src/../include/MissionVector.h
  ../src/../include/Trajectory.h
  /home/gordon/Documents/gitrepos/MAVSDK/example/offboard_skywriting_mode/src/LetterWaypoint.cpp
  /usr/local/include/mavsdk/connection_result.h

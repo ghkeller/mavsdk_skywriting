@@ -19,28 +19,13 @@ find_package(MAVSDK REQUIRED)
 
 include_directories(include)
 
-#add_library(LetterWaypointLib STATIC
-#    src/LetterWaypoint.cpp)
-
-#add_library(MissionVectorOperationsLib STATIC
-#    src/MissionVectorOperations.cpp)
-
-#target_link_libraries(LetterWaypointLib
-#    MAVSDK::mavsdk_offboard
-#    MAVSDK::mavsdk
-#)
-
-#target_link_libraries(MissionVectorOperationsLib
-#    LetterWaypointLib
-#)
-
 add_executable(offboard_skywriting
     src/offboard_skywriting_main.cpp
 )
 
 target_link_libraries(offboard_skywriting
     LetterWaypointLib
-    MissionVectorOperationsLib
+    MissionVectorLib
     TrajectoryLib
 
     MAVSDK::mavsdk_action

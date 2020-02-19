@@ -18,7 +18,7 @@ mavsdk/plugins/offboard/offboard.h
 Trajectory.h
 -
 
-../src/../include/MissionVectorOperations.h
+../src/../include/MissionVector.h
 iostream
 -
 vector
@@ -63,7 +63,7 @@ LetterWaypoint.h
 -
 Trajectory.h
 -
-MissionVectorOperations.h
+MissionVector.h
 -
 pid_control.h
 -

@@ -6,7 +6,7 @@
 
 #IncludeRegexTransform: 
 
-../include/Common.h
+../src/../include/Common.h
 iostream
 -
 string
@@ -20,7 +20,7 @@ mavsdk/plugins/offboard/offboard.h
 mavsdk/plugins/telemetry/telemetry.h
 -
 
-../include/LetterWaypoint.h
+../src/../include/LetterWaypoint.h
 vector
 -
 map
@@ -32,7 +32,7 @@ mavsdk/plugins/offboard/offboard.h
 Trajectory.h
 -
 
-../include/MissionVector.h
+../src/../include/MissionVector.h
 iostream
 -
 vector
@@ -44,7 +44,7 @@ mavsdk/plugins/offboard/offboard.h
 mavsdk/plugins/telemetry/telemetry.h
 -
 
-../include/Trajectory.h
+../src/../include/Trajectory.h
 iostream
 -
 memory
@@ -60,20 +60,20 @@ mavsdk/plugins/offboard/offboard.h
 mavsdk/plugins/telemetry/telemetry.h
 -
 
-/home/gordon/Documents/gitrepos/MAVSDK/example/offboard_skywriting_mode/src/offboard_skywriting_main.cpp
-chrono
--
-cmath
+/home/gordon/Documents/gitrepos/MAVSDK/example/offboard_skywriting_mode/src/MissionVector.cpp
+vector
 -
 iostream
 -
-thread
+string
 -
-vector
+LetterWaypoint.h
 -
-array
+Trajectory.h
 -
-map
+MissionVector.h
+-
+Common.h
 -
 mavsdk/mavsdk.h
 -
@@ -82,14 +82,6 @@ mavsdk/plugins/action/action.h
 mavsdk/plugins/offboard/offboard.h
 -
 mavsdk/plugins/telemetry/telemetry.h
--
-Common.h
--
-LetterWaypoint.h
--
-Trajectory.h
--
-MissionVector.h
 -
 
 /usr/local/include/mavsdk/connection_result.h

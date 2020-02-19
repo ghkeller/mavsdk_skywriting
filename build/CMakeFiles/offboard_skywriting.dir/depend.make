@@ -3,7 +3,7 @@
 
 CMakeFiles/offboard_skywriting.dir/src/offboard_skywriting_main.cpp.o: ../include/Common.h
 CMakeFiles/offboard_skywriting.dir/src/offboard_skywriting_main.cpp.o: ../include/LetterWaypoint.h
-CMakeFiles/offboard_skywriting.dir/src/offboard_skywriting_main.cpp.o: ../include/MissionVectorOperations.h
+CMakeFiles/offboard_skywriting.dir/src/offboard_skywriting_main.cpp.o: ../include/MissionVector.h
 CMakeFiles/offboard_skywriting.dir/src/offboard_skywriting_main.cpp.o: ../include/Trajectory.h
 CMakeFiles/offboard_skywriting.dir/src/offboard_skywriting_main.cpp.o: ../src/offboard_skywriting_main.cpp
 CMakeFiles/offboard_skywriting.dir/src/offboard_skywriting_main.cpp.o: /usr/local/include/mavsdk/connection_result.h

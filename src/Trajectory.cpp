@@ -6,7 +6,7 @@
 
 #include <LetterWaypoint.h>
 #include <Trajectory.h>
-#include <MissionVectorOperations.h>
+#include <MissionVector.h>
 #include <pid_control.h>
 
 #include <mavsdk/plugins/offboard/offboard.h>

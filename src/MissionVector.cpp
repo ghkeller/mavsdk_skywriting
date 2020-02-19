@@ -6,7 +6,7 @@
 
 #include <LetterWaypoint.h>
 #include <Trajectory.h>
-#include <MissionVectorOperations.h>
+#include <MissionVector.h>
 #include <Common.h>
 
 #include <mavsdk/mavsdk.h>
@@ -24,8 +24,12 @@ extern mavsdk_skywriting::LetterWaypoints* _letters;
 
 namespace mavsdk_skywriting {
 
+float MissionVector::getMissionLength() {
+    return mission_width;
+}
+
 //creates a vector of setpoints based on an input string
-vector<Letter *> MissionVectorOperations::stringToMissionVec(std::string str, float _letter_height,
+MissionVector::MissionVector(std::string str, float _letter_height,
 	float _letter_spacing, float _row_spacing, float _scale_factor, float _whitespace_width)
 {
     std::vector<Letter *> _mission_wps;
@@ -58,13 +62,16 @@ vector<Letter *> MissionVectorOperations::stringToMissionVec(std::string str, fl
         new_letter->print();
 
         running_text_width += (new_letter->letter_width + _letter_spacing);
-		_mission_wps.push_back(new_letter);
+		letter_waypoints.push_back(new_letter);
 	}
-	return _mission_wps;
+
+    //update the mission vector description
+    mission_width = running_text_width;
+
 }
 
-bool MissionVectorOperations::execute(std::shared_ptr<mavsdk::Offboard> offboard, std::shared_ptr<mavsdk::Telemetry> telemetry,
-    vector<mavsdk_skywriting::Letter *> _letter_waypoints, bool error_comp, float _wp_hit_thres, float _speed)
+bool MissionVector::execute(std::shared_ptr<mavsdk::Offboard> offboard, std::shared_ptr<mavsdk::Telemetry> telemetry,
+                                 bool error_comp, float _wp_hit_thres, float _speed)
 {
     const std::string offb_mode = "NED";
     // Send it once before starting offboard, otherwise it will be rejected.
@@ -76,7 +83,7 @@ bool MissionVectorOperations::execute(std::shared_ptr<mavsdk::Offboard> offboard
 
     // set the origin
     Telemetry::PositionVelocityNED text_origin = telemetry->position_velocity_ned();
-    for (mavsdk_skywriting::Letter *_letter : _letter_waypoints) {
+    for (mavsdk_skywriting::Letter *_letter : letter_waypoints) {
         std::cout << "Before we've adjusted for start position: " << std::endl;
         _letter->print();
         for (mavsdk_skywriting::Trajectory *_traj : _letter->trajs) {
@@ -85,7 +92,7 @@ bool MissionVectorOperations::execute(std::shared_ptr<mavsdk::Offboard> offboard
     }
 
     // traverse the waypoints
-    for (mavsdk_skywriting::Letter *_letter : _letter_waypoints) {
+    for (mavsdk_skywriting::Letter *_letter : letter_waypoints) {
         std::cout << "After we've adjusted for start position: " << std::endl;
         _letter->print();
 

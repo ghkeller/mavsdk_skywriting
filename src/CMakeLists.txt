@@ -24,11 +24,11 @@ target_link_libraries(LetterWaypointLib
     MAVSDK::mavsdk
 )
 
-add_library(MissionVectorOperationsLib STATIC
-    MissionVectorOperations.cpp)
+add_library(MissionVectorLib STATIC
+    MissionVector.cpp)
 
 
-target_link_libraries(MissionVectorOperationsLib
+target_link_libraries(MissionVectorLib
     LetterWaypointLib
 
     MAVSDK::mavsdk_action
@@ -45,16 +45,3 @@ target_link_libraries(TrajectoryLib
     MAVSDK::mavsdk_offboard
     MAVSDK::mavsdk_telemetry
 )
-
-#add_executable(offboard_skywriting
-#    src/offboard_skywriting_main.cpp
-#)
-
-#target_link_libraries(offboard_skywriting
-#    LetterWaypointLib
-
-#    MAVSDK::mavsdk_action
-#    MAVSDK::mavsdk_offboard
-#    MAVSDK::mavsdk_telemetry
-#    MAVSDK::mavsdk
-#)
