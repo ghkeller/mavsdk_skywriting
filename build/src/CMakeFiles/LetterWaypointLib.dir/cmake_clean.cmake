@@ -1,7 +1,8 @@
 file(REMOVE_RECURSE
   "CMakeFiles/LetterWaypointLib.dir/LetterWaypoint.cpp.o"
-  "libLetterWaypointLib.pdb"
+  "CMakeFiles/LetterWaypointLib.dir/LetterWaypoint.cpp.o.d"
   "libLetterWaypointLib.a"
+  "libLetterWaypointLib.pdb"
 )
 
 # Per-language clean rules from dependency scanning.

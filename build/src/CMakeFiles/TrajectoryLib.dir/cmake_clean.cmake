@@ -1,7 +1,8 @@
 file(REMOVE_RECURSE
   "CMakeFiles/TrajectoryLib.dir/Trajectory.cpp.o"
-  "libTrajectoryLib.pdb"
+  "CMakeFiles/TrajectoryLib.dir/Trajectory.cpp.o.d"
   "libTrajectoryLib.a"
+  "libTrajectoryLib.pdb"
 )
 
 # Per-language clean rules from dependency scanning.
