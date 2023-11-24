@@ -3,6 +3,9 @@
 ## Gordon Keller
 ## Rev. 1 1/3/20
 
+### PROJECT BRANCH: PORTING TO A PHYSICAL SYSTEM
+This branch's purpose is to add any additional configurations, changes, scripts, etc. to facilitate running on a physical computer without a companion computer (at least for primary mavros node)
+
 A MAVSDK-based implementation of a multirotor skywriting mode that:
 1. Establishes connection to PX4 system
 2. Takes a string argument of the form 'WRITE THIS' and converts it to waypoints and trajectories
@@ -10,7 +13,7 @@ A MAVSDK-based implementation of a multirotor skywriting mode that:
 
 ## Building
 
-*MAVSDK libraries must be installed on the system
+*MAVSDK libraries must be installed on the system, and you must have PX4 locally to run SITL simulation
 
 ```
 cd /{PROJECT DIR}
