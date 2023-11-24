@@ -1,7 +1,8 @@
 file(REMOVE_RECURSE
   "CMakeFiles/runTrajectoryTests.dir/trajectory_tests.cpp.o"
-  "runTrajectoryTests.pdb"
+  "CMakeFiles/runTrajectoryTests.dir/trajectory_tests.cpp.o.d"
   "runTrajectoryTests"
+  "runTrajectoryTests.pdb"
 )
 
 # Per-language clean rules from dependency scanning.

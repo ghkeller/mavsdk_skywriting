@@ -1,4 +1,4 @@
-# Install script for directory: /home/gordon/Documents/gitrepos/MAVSDK/example/offboard_skywriting_mode
+# Install script for directory: /home/gordon/gitrepos/mavsdk_skywriting
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -32,11 +32,14 @@ if(NOT DEFINED CMAKE_INSTALL_SO_NO_EXE)
   set(CMAKE_INSTALL_SO_NO_EXE "1")
 endif()
 
-if(NOT CMAKE_INSTALL_LOCAL_ONLY)
-  # Include the install script for each subdirectory.
-  include("/home/gordon/Documents/gitrepos/MAVSDK/example/offboard_skywriting_mode/build/src/cmake_install.cmake")
-  include("/home/gordon/Documents/gitrepos/MAVSDK/example/offboard_skywriting_mode/build/test/cmake_install.cmake")
+# Is this installation the result of a crosscompile?
+if(NOT DEFINED CMAKE_CROSSCOMPILING)
+  set(CMAKE_CROSSCOMPILING "FALSE")
+endif()
 
+# Set default install directory permissions.
+if(NOT DEFINED CMAKE_OBJDUMP)
+  set(CMAKE_OBJDUMP "/usr/bin/objdump")
 endif()
 
 if(CMAKE_INSTALL_COMPONENT)
@@ -47,5 +50,5 @@ endif()
 
 string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
        "${CMAKE_INSTALL_MANIFEST_FILES}")
-file(WRITE "/home/gordon/Documents/gitrepos/MAVSDK/example/offboard_skywriting_mode/build/${CMAKE_INSTALL_MANIFEST}"
+file(WRITE "/home/gordon/gitrepos/mavsdk_skywriting/build/${CMAKE_INSTALL_MANIFEST}"
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")

@@ -1,8 +1,8 @@
-cmake_minimum_required(VERSION 2.8.12)
+cmake_minimum_required(VERSION 3.13)
 
-project(offboard_skywriting_project)
-add_subdirectory(src)
-add_subdirectory(test)
+project(mavsdk_skywriting)
+#add_subdirectory(src)
+#add_subdirectory(test)
 
 if(MINGW)
     add_definitions("-D_USE_MATH_DEFINES") # For M_PI
@@ -15,9 +15,20 @@ else()
     add_definitions("-std=c++11 -Wall -Wextra")
 endif()
 
-find_package(MAVSDK REQUIRED)
+set(CMAKE_MODULE_PATH ${CMAKE_MODULE_PATH} $ENV{HOME}/MAVSDK)
 
-include_directories(include)
+message(CMAKE_MODULE_PATH="${CMAKE_MODULE_PATH}")
+
+find_package(MAVSDK REQUIRED IMPORTED)
+
+get_cmake_property(_variableNames VARIABLES)
+list (SORT _variableNames)
+foreach (_variableName ${_variableNames})
+    message(STATUS "${_variableName}=${${_variableName}}")
+endforeach()
+
+
+include_directories(include ${MAVSDK_DIR}/include)
 
 add_executable(offboard_skywriting
     src/offboard_skywriting_main.cpp
@@ -27,9 +38,8 @@ target_link_libraries(offboard_skywriting
     LetterWaypointLib
     MissionVectorLib
     TrajectoryLib
+    ${MAVSDK_DIR}/install/lib
+    #mavsdk::mavsdk
+    #mavsdk::plugins
 
-    MAVSDK::mavsdk_action
-    MAVSDK::mavsdk_offboard
-    MAVSDK::mavsdk_telemetry
-    MAVSDK::mavsdk
 )

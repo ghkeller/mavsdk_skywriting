@@ -1,7 +1,8 @@
 file(REMOVE_RECURSE
   "CMakeFiles/MissionVectorLib.dir/MissionVector.cpp.o"
-  "libMissionVectorLib.pdb"
+  "CMakeFiles/MissionVectorLib.dir/MissionVector.cpp.o.d"
   "libMissionVectorLib.a"
+  "libMissionVectorLib.pdb"
 )
 
 # Per-language clean rules from dependency scanning.

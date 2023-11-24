@@ -1,23 +1,19 @@
+
+# Consider dependencies only in project.
+set(CMAKE_DEPENDS_IN_PROJECT_ONLY OFF)
+
 # The set of languages for which implicit dependencies are needed:
 set(CMAKE_DEPENDS_LANGUAGES
-  "CXX"
   )
-# The set of files for implicit dependencies of each language:
-set(CMAKE_DEPENDS_CHECK_CXX
-  "/home/gordon/Documents/gitrepos/MAVSDK/example/offboard_skywriting_mode/test/trajectory_tests.cpp" "/home/gordon/Documents/gitrepos/MAVSDK/example/offboard_skywriting_mode/build/test/CMakeFiles/runTrajectoryTests.dir/trajectory_tests.cpp.o"
-  )
-set(CMAKE_CXX_COMPILER_ID "GNU")
 
-# The include file search paths:
-set(CMAKE_CXX_TARGET_INCLUDE_PATH
-  "../test/../include"
-  "/usr/local/include/mavsdk"
-  "/usr/local/include"
+# The set of dependency files which are needed:
+set(CMAKE_DEPENDS_DEPENDENCY_FILES
+  "/home/gordon/gitrepos/mavsdk_skywriting/test/trajectory_tests.cpp" "test/CMakeFiles/runTrajectoryTests.dir/trajectory_tests.cpp.o" "gcc" "test/CMakeFiles/runTrajectoryTests.dir/trajectory_tests.cpp.o.d"
   )
 
 # Targets to which this target links.
 set(CMAKE_TARGET_LINKED_INFO_FILES
-  "/home/gordon/Documents/gitrepos/MAVSDK/example/offboard_skywriting_mode/build/src/CMakeFiles/TrajectoryLib.dir/DependInfo.cmake"
+  "/home/gordon/gitrepos/mavsdk_skywriting/build/src/CMakeFiles/TrajectoryLib.dir/DependInfo.cmake"
   )
 
 # Fortran module output directory.
