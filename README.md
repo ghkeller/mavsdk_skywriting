@@ -48,4 +48,7 @@ This command will initialize vehicle takeoff sequence (if not already airborne) 
 - Add safety protocols
 - Create GTests for each library
 - Add external instrument (LED, smoke machine) controls (refer to https://ardupilot.org/copter/docs/common-external-leds.html -- even though this reference is for ardupilot, should be a programming option for PX4)
+- Add build information/changes to allow for local install of MAVSDK, not just system-wide install out of the box
+- Change this section to a proper project roadmap rather than a list of to-dos
+
 
