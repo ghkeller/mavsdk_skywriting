@@ -22,8 +22,8 @@ namespace mavsdk_skywriting
 // Handles Action's result
 inline void action_error_exit(Action::Result result, const std::string& message)
 {
-    if (result != Action::Result::SUCCESS) {
-        std::cerr << ERROR_CONSOLE_TEXT << message << Action::result_str(result)
+    if (result != Action::Result::Success) {
+        std::cerr << ERROR_CONSOLE_TEXT << message << result
                   << NORMAL_CONSOLE_TEXT << std::endl;
         exit(EXIT_FAILURE);
     }
@@ -32,8 +32,8 @@ inline void action_error_exit(Action::Result result, const std::string& message)
 // Handles Offboard's result
 inline void offboard_error_exit(Offboard::Result result, const std::string& message)
 {
-    if (result != Offboard::Result::SUCCESS) {
-        std::cerr << ERROR_CONSOLE_TEXT << message << Offboard::result_str(result)
+    if (result != Offboard::Result::Success) {
+        std::cerr << ERROR_CONSOLE_TEXT << message << result
                   << NORMAL_CONSOLE_TEXT << std::endl;
         exit(EXIT_FAILURE);
     }
@@ -42,8 +42,8 @@ inline void offboard_error_exit(Offboard::Result result, const std::string& mess
 // Handles connection result
 inline void connection_error_exit(ConnectionResult result, const std::string& message)
 {
-    if (result != ConnectionResult::SUCCESS) {
-        std::cerr << ERROR_CONSOLE_TEXT << message << connection_result_str(result)
+    if (result != ConnectionResult::Success) {
+        std::cerr << ERROR_CONSOLE_TEXT << message << result
                   << NORMAL_CONSOLE_TEXT << std::endl;
         exit(EXIT_FAILURE);
     }

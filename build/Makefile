@@ -117,93 +117,54 @@ depend:
 .PHONY : depend
 
 #=============================================================================
-# Target rules for targets named offboard_skywriting
+# Target rules for targets named skywriting
 
 # Build rule for target.
-offboard_skywriting: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 offboard_skywriting
-.PHONY : offboard_skywriting
+skywriting: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 skywriting
+.PHONY : skywriting
 
 # fast build rule for target.
-offboard_skywriting/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/offboard_skywriting.dir/build.make CMakeFiles/offboard_skywriting.dir/build
-.PHONY : offboard_skywriting/fast
+skywriting/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/skywriting.dir/build.make CMakeFiles/skywriting.dir/build
+.PHONY : skywriting/fast
 
 #=============================================================================
-# Target rules for targets named LetterWaypointLib
+# Target rules for targets named skywriting_lib
 
 # Build rule for target.
-LetterWaypointLib: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 LetterWaypointLib
-.PHONY : LetterWaypointLib
+skywriting_lib: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 skywriting_lib
+.PHONY : skywriting_lib
 
 # fast build rule for target.
-LetterWaypointLib/fast:
-	$(MAKE) $(MAKESILENT) -f src/CMakeFiles/LetterWaypointLib.dir/build.make src/CMakeFiles/LetterWaypointLib.dir/build
-.PHONY : LetterWaypointLib/fast
+skywriting_lib/fast:
+	$(MAKE) $(MAKESILENT) -f lib/CMakeFiles/skywriting_lib.dir/build.make lib/CMakeFiles/skywriting_lib.dir/build
+.PHONY : skywriting_lib/fast
 
-#=============================================================================
-# Target rules for targets named MissionVectorLib
-
-# Build rule for target.
-MissionVectorLib: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 MissionVectorLib
-.PHONY : MissionVectorLib
-
-# fast build rule for target.
-MissionVectorLib/fast:
-	$(MAKE) $(MAKESILENT) -f src/CMakeFiles/MissionVectorLib.dir/build.make src/CMakeFiles/MissionVectorLib.dir/build
-.PHONY : MissionVectorLib/fast
-
-#=============================================================================
-# Target rules for targets named TrajectoryLib
-
-# Build rule for target.
-TrajectoryLib: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 TrajectoryLib
-.PHONY : TrajectoryLib
-
-# fast build rule for target.
-TrajectoryLib/fast:
-	$(MAKE) $(MAKESILENT) -f src/CMakeFiles/TrajectoryLib.dir/build.make src/CMakeFiles/TrajectoryLib.dir/build
-.PHONY : TrajectoryLib/fast
-
-#=============================================================================
-# Target rules for targets named runTrajectoryTests
-
-# Build rule for target.
-runTrajectoryTests: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 runTrajectoryTests
-.PHONY : runTrajectoryTests
-
-# fast build rule for target.
-runTrajectoryTests/fast:
-	$(MAKE) $(MAKESILENT) -f test/CMakeFiles/runTrajectoryTests.dir/build.make test/CMakeFiles/runTrajectoryTests.dir/build
-.PHONY : runTrajectoryTests/fast
-
-src/offboard_skywriting_main.o: src/offboard_skywriting_main.cpp.o
-.PHONY : src/offboard_skywriting_main.o
+src/skywriting.o: src/skywriting.cpp.o
+.PHONY : src/skywriting.o
 
 # target to build an object file
-src/offboard_skywriting_main.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/offboard_skywriting.dir/build.make CMakeFiles/offboard_skywriting.dir/src/offboard_skywriting_main.cpp.o
-.PHONY : src/offboard_skywriting_main.cpp.o
+src/skywriting.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/skywriting.dir/build.make CMakeFiles/skywriting.dir/src/skywriting.cpp.o
+.PHONY : src/skywriting.cpp.o
 
-src/offboard_skywriting_main.i: src/offboard_skywriting_main.cpp.i
-.PHONY : src/offboard_skywriting_main.i
+src/skywriting.i: src/skywriting.cpp.i
+.PHONY : src/skywriting.i
 
 # target to preprocess a source file
-src/offboard_skywriting_main.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/offboard_skywriting.dir/build.make CMakeFiles/offboard_skywriting.dir/src/offboard_skywriting_main.cpp.i
-.PHONY : src/offboard_skywriting_main.cpp.i
+src/skywriting.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/skywriting.dir/build.make CMakeFiles/skywriting.dir/src/skywriting.cpp.i
+.PHONY : src/skywriting.cpp.i
 
-src/offboard_skywriting_main.s: src/offboard_skywriting_main.cpp.s
-.PHONY : src/offboard_skywriting_main.s
+src/skywriting.s: src/skywriting.cpp.s
+.PHONY : src/skywriting.s
 
 # target to generate assembly for a file
-src/offboard_skywriting_main.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/offboard_skywriting.dir/build.make CMakeFiles/offboard_skywriting.dir/src/offboard_skywriting_main.cpp.s
-.PHONY : src/offboard_skywriting_main.cpp.s
+src/skywriting.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/skywriting.dir/build.make CMakeFiles/skywriting.dir/src/skywriting.cpp.s
+.PHONY : src/skywriting.cpp.s
 
 # Help Target
 help:
@@ -213,14 +174,11 @@ help:
 	@echo "... depend"
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
-	@echo "... LetterWaypointLib"
-	@echo "... MissionVectorLib"
-	@echo "... TrajectoryLib"
-	@echo "... offboard_skywriting"
-	@echo "... runTrajectoryTests"
-	@echo "... src/offboard_skywriting_main.o"
-	@echo "... src/offboard_skywriting_main.i"
-	@echo "... src/offboard_skywriting_main.s"
+	@echo "... skywriting"
+	@echo "... skywriting_lib"
+	@echo "... src/skywriting.o"
+	@echo "... src/skywriting.i"
+	@echo "... src/skywriting.s"
 .PHONY : help
 
 

@@ -31,20 +31,20 @@ namespace mavsdk_skywriting
 	{
 	protected:
 	//registers a waypoint hit when inside the waypoint bubble
-	bool reached_waypoint(Offboard::PositionNEDYaw pos, std::shared_ptr<mavsdk::Telemetry> telemetry, float _wp_hit_thres=0.3);
-	bool reached_waypoint(Offboard::PositionNEDYaw pos, std::shared_ptr<mavsdk::Telemetry> telemetry,
+	bool reached_waypoint(mavsdk::Offboard::PositionNedYaw pos, mavsdk::Telemetry &telemetry, float _wp_hit_thres=0.3);
+	bool reached_waypoint(mavsdk::Offboard::PositionNedYaw pos, mavsdk::Telemetry &telemetry,
         float expected_traversal_time, std::chrono::duration<double> elapsed_time, float _wp_hit_thres=0.3);
 
 	public:
-		Offboard::PositionNEDYaw target_wp;
+		Offboard::PositionNedYaw target_wp;
 
 	    Trajectory();
-	    Trajectory(Offboard::PositionNEDYaw _target_wp) { target_wp = _target_wp; }
-	    virtual void traverse(std::shared_ptr<mavsdk::Offboard> offboard,
-	    	std::shared_ptr<mavsdk::Telemetry> telemetry, float _wp_hit_thres, float _speed) = 0;
+	    Trajectory(Offboard::PositionNedYaw _target_wp) { target_wp = _target_wp; }
+	    virtual void traverse(Offboard &offboard,
+	    	Telemetry &telemetry, float _wp_hit_thres, float _speed) = 0;
 
 	    Trajectory(const Trajectory &_traj) { target_wp= _traj.target_wp; } 
-	    // void operator +(Offboard::PositionNEDYaw _a) {
+	    // void operator +(Offboard::PositionNedYaw _a) {
 	    // 	float north_m = target_wp.north_m + _a.north_m;
 	    // 	float east_m = target_wp.east_m + _a.east_m;
 	    // 	float down_m = target_wp.down_m + _a.down_m;
@@ -54,14 +54,14 @@ namespace mavsdk_skywriting
     	virtual Trajectory *copy() = 0;
 	    virtual void print() = 0;
 
-	    virtual void operator +=(Offboard::PositionNEDYaw _a) {
+	    virtual void operator +=(Offboard::PositionNedYaw _a) {
 	    	target_wp.north_m = target_wp.north_m + _a.north_m;
 	    	target_wp.east_m = target_wp.east_m + _a.east_m;
 	    	target_wp.down_m = target_wp.down_m + _a.down_m;
 	    	target_wp.yaw_deg = target_wp.yaw_deg + _a.yaw_deg;
 	    }
 
-	    virtual void operator +=(Telemetry::PositionNED _a) {
+	    virtual void operator +=(Telemetry::PositionNed _a) {
 	    	target_wp.north_m = target_wp.north_m + _a.north_m;
 	    	target_wp.east_m = target_wp.east_m + _a.east_m;
 	    	target_wp.down_m = target_wp.down_m + _a.down_m;
@@ -78,7 +78,7 @@ namespace mavsdk_skywriting
 	{
 	public:
 		TrajNoPref();
-		TrajNoPref(Offboard::PositionNEDYaw _target_wp) : Trajectory(_target_wp) { target_wp=_target_wp; }
+		TrajNoPref(Offboard::PositionNedYaw _target_wp) : Trajectory(_target_wp) { target_wp=_target_wp; }
 	    // this is a blocking function
 	    TrajNoPref* copy() {
 	    	return new TrajNoPref({target_wp.north_m,
@@ -88,8 +88,8 @@ namespace mavsdk_skywriting
 	    }
 	    TrajNoPref(const TrajNoPref &_traj) : Trajectory(_traj) { std::cout << "using" << std::endl; target_wp = _traj.target_wp; }
 
-	    void traverse(std::shared_ptr<mavsdk::Offboard> offboard,
-	    	std::shared_ptr<mavsdk::Telemetry> telemetry, float _wp_hit_thres, float _speed);
+	    void traverse(mavsdk::Offboard &offboard,
+	    	mavsdk::Telemetry &telemetry, float _wp_hit_thres, float _speed);
 
 	    void print() { std::cout << "TrajNoPref: " << target_wp << std::endl; }
 	};
@@ -98,7 +98,7 @@ namespace mavsdk_skywriting
 	{
 	public:
 		TrajStraight();
-		TrajStraight(Offboard::PositionNEDYaw _target_wp) : Trajectory(_target_wp) { target_wp=_target_wp;}
+		TrajStraight(Offboard::PositionNedYaw _target_wp) : Trajectory(_target_wp) { target_wp=_target_wp;}
 	    
 		TrajStraight* copy() {
 	    	return new TrajStraight({target_wp.north_m,
@@ -110,8 +110,8 @@ namespace mavsdk_skywriting
 	    TrajStraight(const TrajStraight &_traj) : Trajectory(_traj) { std::cout << "using" << std::endl; target_wp = _traj.target_wp; }
 
 	    // this is a blocking function
-	    void traverse(std::shared_ptr<mavsdk::Offboard> offboard,
-	    	std::shared_ptr<mavsdk::Telemetry> telemetry,
+	    void traverse(mavsdk::Offboard &offboard,
+	    	mavsdk::Telemetry &telemetry,
 	    	float _wp_hit_thres, float _speed);
 
 	    void print() { std::cout << "TrajStraight: " << target_wp << std::endl; }
@@ -126,18 +126,18 @@ namespace mavsdk_skywriting
 		};
 
 		Direction direction;
-		Offboard::PositionNEDYaw center_wp;
+		Offboard::PositionNedYaw center_wp;
 
 		TrajCurved();
-		TrajCurved(Offboard::PositionNEDYaw _target_wp,
-				Offboard::PositionNEDYaw _center_wp,
+		TrajCurved(Offboard::PositionNedYaw _target_wp,
+				Offboard::PositionNedYaw _center_wp,
 				Direction _direction) : Trajectory(_target_wp) {
 				center_wp = _center_wp;
 				direction = _direction;
 				}
 		TrajCurved(const TrajCurved &_traj) : Trajectory(_traj) { std::cout << "using" << std::endl; target_wp = _traj.target_wp; }
 
-		void operator +=(Offboard::PositionNEDYaw _a) {
+		void operator +=(Offboard::PositionNedYaw _a) {
 	    	target_wp.north_m = target_wp.north_m + _a.north_m;
 	    	target_wp.east_m = target_wp.east_m + _a.east_m;
 	    	target_wp.down_m = target_wp.down_m + _a.down_m;
@@ -149,7 +149,7 @@ namespace mavsdk_skywriting
 	    	center_wp.yaw_deg = center_wp.yaw_deg + _a.yaw_deg;
 	    }
 
-	    void operator +=(Telemetry::PositionNED _a) {
+	    void operator +=(Telemetry::PositionNed _a) {
 	    	target_wp.north_m = target_wp.north_m + _a.north_m;
 	    	target_wp.east_m = target_wp.east_m + _a.east_m;
 	    	target_wp.down_m = target_wp.down_m + _a.down_m;
@@ -182,8 +182,8 @@ namespace mavsdk_skywriting
 	    }
 
 	    // this is a blocking function
-	    void traverse(std::shared_ptr<mavsdk::Offboard> offboard,
-	    	std::shared_ptr<mavsdk::Telemetry> telemetry,
+	    void traverse(mavsdk::Offboard &offboard,
+	    	mavsdk::Telemetry &telemetry,
 	    	float _wp_hit_thres, float _speed);
 
 	    void print() { std::cout << "TrajCurved: " << target_wp << center_wp << std::endl; }

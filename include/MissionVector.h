@@ -8,6 +8,7 @@
 
 #include <LetterWaypoint.h>
 
+#include <mavsdk/mavsdk.h>
 #include <mavsdk/plugins/offboard/offboard.h>
 #include <mavsdk/plugins/telemetry/telemetry.h>
 
@@ -29,7 +30,7 @@ namespace mavsdk_skywriting
 
 		float getMissionLength();
 
-		bool execute(std::shared_ptr<mavsdk::Offboard> offboard, std::shared_ptr<mavsdk::Telemetry> telemetry,
+		bool execute(mavsdk::Offboard &offboard, mavsdk::Telemetry &telemetry,
 						 bool error_comp=false, float _wp_hit_thres=0.3f,
     					float _speed=1.0f);
 

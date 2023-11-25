@@ -2,7 +2,6 @@
 
 #include <LetterWaypoint.h>
 #include <Trajectory.h>
-#include <MissionVector.h>
 
 #include <iostream>
 
@@ -11,13 +10,13 @@ using namespace std;
 namespace mavsdk_skywriting
 {
 
-LetterWaypoints::LetterWaypoints()
+LetterWaypoint::LetterWaypoint()
 {
 	//initialize the lookup table
-	LetterWaypoints::initializeLookupTable();
+	LetterWaypoint::initializeLookupTable();
 }
 
-bool LetterWaypoints::initializeLookupTable()
+bool LetterWaypoint::initializeLookupTable()
 {
 	cout << "Initializing lookup table..." << endl;
 

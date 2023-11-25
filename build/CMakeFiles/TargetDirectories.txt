@@ -1,11 +1,6 @@
-/home/gordon/gitrepos/mavsdk_skywriting/build/CMakeFiles/offboard_skywriting.dir
+/home/gordon/gitrepos/mavsdk_skywriting/build/CMakeFiles/skywriting.dir
 /home/gordon/gitrepos/mavsdk_skywriting/build/CMakeFiles/edit_cache.dir
 /home/gordon/gitrepos/mavsdk_skywriting/build/CMakeFiles/rebuild_cache.dir
-/home/gordon/gitrepos/mavsdk_skywriting/build/src/CMakeFiles/LetterWaypointLib.dir
-/home/gordon/gitrepos/mavsdk_skywriting/build/src/CMakeFiles/MissionVectorLib.dir
-/home/gordon/gitrepos/mavsdk_skywriting/build/src/CMakeFiles/TrajectoryLib.dir
-/home/gordon/gitrepos/mavsdk_skywriting/build/src/CMakeFiles/edit_cache.dir
-/home/gordon/gitrepos/mavsdk_skywriting/build/src/CMakeFiles/rebuild_cache.dir
-/home/gordon/gitrepos/mavsdk_skywriting/build/test/CMakeFiles/runTrajectoryTests.dir
-/home/gordon/gitrepos/mavsdk_skywriting/build/test/CMakeFiles/edit_cache.dir
-/home/gordon/gitrepos/mavsdk_skywriting/build/test/CMakeFiles/rebuild_cache.dir
+/home/gordon/gitrepos/mavsdk_skywriting/build/lib/CMakeFiles/skywriting_lib.dir
+/home/gordon/gitrepos/mavsdk_skywriting/build/lib/CMakeFiles/edit_cache.dir
+/home/gordon/gitrepos/mavsdk_skywriting/build/lib/CMakeFiles/rebuild_cache.dir

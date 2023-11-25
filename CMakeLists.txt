@@ -1,36 +1,33 @@
-cmake_minimum_required(VERSION 3.13)
+cmake_minimum_required(VERSION 3.10.2)
 
+set(CMAKE_CXX_STANDARD 17)
+set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
-project(offboard_skywriting_project)
-add_subdirectory(src)
-add_subdirectory(test)
-
-if(MINGW)
-    add_definitions("-D_USE_MATH_DEFINES") # For M_PI
-endif()
-
-if(MSVC)
-    add_definitions("-std=c++11 -WX -W2")
-    add_definitions("-D_USE_MATH_DEFINES") # For M_PI
-else()
-    add_definitions("-std=c++11 -Wall -Wextra")
-endif()
+project(skywriting_project)
+add_subdirectory(lib)
 
 find_package(MAVSDK REQUIRED)
 
-include_directories(include)
+add_executable(skywriting
+    src/skywriting.cpp
+    )
 
-add_executable(offboard_skywriting
-    src/offboard_skywriting_main.cpp
-)
+target_include_directories(skywriting PRIVATE
+    include /usr/local/include/mavsdk
+    )
 
-target_link_libraries(offboard_skywriting
-    LetterWaypointLib
-    MissionVectorLib
-    TrajectoryLib
-
-    MAVSDK::mavsdk_action
-    MAVSDK::mavsdk_offboard
-    MAVSDK::mavsdk_telemetry
+target_link_libraries(skywriting
     MAVSDK::mavsdk
+    skywriting_lib
 )
+
+if(NOT MSVC)
+    add_compile_options(skywriting PRIVATE -Wall -Wextra -l/usr/local/include/mavsdk)
+else()
+    add_compile_options(skywriting PRIVATE -WX -W2)
+endif()
+
+if(MINGW OR MSVC)
+    # For M_PI
+    add_target_definitions(skywriting "-D_USE_MATH_DEFINES")
+endif()

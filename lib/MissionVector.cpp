@@ -20,7 +20,7 @@
 
 using namespace std;
 
-extern mavsdk_skywriting::LetterWaypoints* _letters;
+extern mavsdk_skywriting::LetterWaypoint* _letters;
 
 namespace mavsdk_skywriting {
 
@@ -52,7 +52,7 @@ MissionVector::MissionVector(std::string str, float _letter_height,
         new_letter->print();
 		
         for (Trajectory *_traj : new_letter->trajs) {
-            Offboard::PositionNEDYaw adjustment = {0.0f,0.0f,0.0f,0.0f};
+            Offboard::PositionNedYaw adjustment = {0.0f,0.0f,0.0f,0.0f};
             adjustment.east_m = running_text_width;
             adjustment.down_m = (_row_spacing + _letter_height)*line;
             *_traj += adjustment;
@@ -70,19 +70,25 @@ MissionVector::MissionVector(std::string str, float _letter_height,
 
 }
 
-bool MissionVector::execute(std::shared_ptr<mavsdk::Offboard> offboard, std::shared_ptr<mavsdk::Telemetry> telemetry,
+bool MissionVector::execute(mavsdk::Offboard &offboard, mavsdk::Telemetry &telemetry,
                                  bool error_comp, float _wp_hit_thres, float _speed)
 {
-    const std::string offb_mode = "NED";
-    // Send it once before starting offboard, otherwise it will be rejected.
-    offboard->set_velocity_ned({0.0f, 0.0f, 0.0f, 0.0f});
+    std::cout << "we're trying to be in offboard now..." << std::endl;
 
-    Offboard::Result offboard_result = offboard->start();
-    offboard_error_exit(offboard_result, "Offboard start failed");
-    offboard_log(offb_mode, "Offboard started");
+    // Send it once before starting offboard, otherwise it will be rejected.
+    const Offboard::VelocityNedYaw stay{};
+    offboard.set_velocity_ned(stay);
+
+    Offboard::Result offboard_result = offboard.start();
+    if (offboard_result != Offboard::Result::Success) {
+        std::cerr << "Offboard start failed: " << offboard_result << '\n';
+        return false;
+    }
+
+    std::cout << "Offboard started\n";
 
     // set the origin
-    Telemetry::PositionVelocityNED text_origin = telemetry->position_velocity_ned();
+    Telemetry::PositionVelocityNed text_origin = telemetry.position_velocity_ned();
     for (mavsdk_skywriting::Letter *_letter : letter_waypoints) {
         std::cout << "Before we've adjusted for start position: " << std::endl;
         _letter->print();
@@ -96,7 +102,7 @@ bool MissionVector::execute(std::shared_ptr<mavsdk::Offboard> offboard, std::sha
         std::cout << "After we've adjusted for start position: " << std::endl;
         _letter->print();
 
-        Offboard::PositionNEDYaw err = {0.0f,0.0f,0.0f,0.0f};
+        Offboard::PositionNedYaw err = {0.0f,0.0f,0.0f,0.0f};
 
         for (mavsdk_skywriting::Trajectory * _traj : _letter->trajs) {
             // if we aren't doing err correction, will be 0
@@ -106,7 +112,7 @@ bool MissionVector::execute(std::shared_ptr<mavsdk::Offboard> offboard, std::sha
             sleep_for(seconds(1));
 
             if (error_comp == true) {
-                Telemetry::PositionVelocityNED _curr_pos = telemetry->position_velocity_ned();
+                Telemetry::PositionVelocityNed _curr_pos = telemetry.position_velocity_ned();
                 err.east_m += _curr_pos.position.east_m - _traj->target_wp.east_m;
                 err.down_m += _curr_pos.position.down_m - _traj->target_wp.down_m;
             }

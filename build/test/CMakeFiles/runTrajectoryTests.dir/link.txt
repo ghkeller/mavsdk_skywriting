@@ -1,1 +1,0 @@
-/usr/bin/c++ -rdynamic CMakeFiles/runTrajectoryTests.dir/trajectory_tests.cpp.o -o runTrajectoryTests  -Wl,-rpath,/usr/local/lib /usr/lib/x86_64-linux-gnu/libgtest.a -lpthread ../src/libTrajectoryLib.a -lMAVSDK::mavsdk_offboard -lMAVSDK::mavsdk_telemetry /usr/local/lib/libmavsdk.so.f27c3d67.f27c3d67.f27c3d67 

@@ -63,187 +63,85 @@ CMAKE_BINARY_DIR = /home/gordon/gitrepos/mavsdk_skywriting/build
 # Directory level rules for the build root directory
 
 # The main recursive "all" target.
-all: CMakeFiles/offboard_skywriting.dir/all
-all: src/all
-all: test/all
+all: CMakeFiles/skywriting.dir/all
+all: lib/all
 .PHONY : all
 
 # The main recursive "preinstall" target.
-preinstall: src/preinstall
-preinstall: test/preinstall
+preinstall: lib/preinstall
 .PHONY : preinstall
 
 # The main recursive "clean" target.
-clean: CMakeFiles/offboard_skywriting.dir/clean
-clean: src/clean
-clean: test/clean
+clean: CMakeFiles/skywriting.dir/clean
+clean: lib/clean
 .PHONY : clean
 
 #=============================================================================
-# Directory level rules for directory src
+# Directory level rules for directory lib
 
 # Recursive "all" directory target.
-src/all: src/CMakeFiles/LetterWaypointLib.dir/all
-src/all: src/CMakeFiles/MissionVectorLib.dir/all
-src/all: src/CMakeFiles/TrajectoryLib.dir/all
-.PHONY : src/all
+lib/all: lib/CMakeFiles/skywriting_lib.dir/all
+.PHONY : lib/all
 
 # Recursive "preinstall" directory target.
-src/preinstall:
-.PHONY : src/preinstall
+lib/preinstall:
+.PHONY : lib/preinstall
 
 # Recursive "clean" directory target.
-src/clean: src/CMakeFiles/LetterWaypointLib.dir/clean
-src/clean: src/CMakeFiles/MissionVectorLib.dir/clean
-src/clean: src/CMakeFiles/TrajectoryLib.dir/clean
-.PHONY : src/clean
+lib/clean: lib/CMakeFiles/skywriting_lib.dir/clean
+.PHONY : lib/clean
 
 #=============================================================================
-# Directory level rules for directory test
-
-# Recursive "all" directory target.
-test/all: test/CMakeFiles/runTrajectoryTests.dir/all
-.PHONY : test/all
-
-# Recursive "preinstall" directory target.
-test/preinstall:
-.PHONY : test/preinstall
-
-# Recursive "clean" directory target.
-test/clean: test/CMakeFiles/runTrajectoryTests.dir/clean
-.PHONY : test/clean
-
-#=============================================================================
-# Target rules for target CMakeFiles/offboard_skywriting.dir
+# Target rules for target CMakeFiles/skywriting.dir
 
 # All Build rule for target.
-CMakeFiles/offboard_skywriting.dir/all: src/CMakeFiles/TrajectoryLib.dir/all
-CMakeFiles/offboard_skywriting.dir/all: src/CMakeFiles/LetterWaypointLib.dir/all
-CMakeFiles/offboard_skywriting.dir/all: src/CMakeFiles/MissionVectorLib.dir/all
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/offboard_skywriting.dir/build.make CMakeFiles/offboard_skywriting.dir/depend
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/offboard_skywriting.dir/build.make CMakeFiles/offboard_skywriting.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/gordon/gitrepos/mavsdk_skywriting/build/CMakeFiles --progress-num=7,8 "Built target offboard_skywriting"
-.PHONY : CMakeFiles/offboard_skywriting.dir/all
+CMakeFiles/skywriting.dir/all: lib/CMakeFiles/skywriting_lib.dir/all
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/skywriting.dir/build.make CMakeFiles/skywriting.dir/depend
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/skywriting.dir/build.make CMakeFiles/skywriting.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/gordon/gitrepos/mavsdk_skywriting/build/CMakeFiles --progress-num=1,2 "Built target skywriting"
+.PHONY : CMakeFiles/skywriting.dir/all
 
 # Build rule for subdir invocation for target.
-CMakeFiles/offboard_skywriting.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/gordon/gitrepos/mavsdk_skywriting/build/CMakeFiles 8
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/offboard_skywriting.dir/all
+CMakeFiles/skywriting.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/gordon/gitrepos/mavsdk_skywriting/build/CMakeFiles 6
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/skywriting.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/gordon/gitrepos/mavsdk_skywriting/build/CMakeFiles 0
-.PHONY : CMakeFiles/offboard_skywriting.dir/rule
+.PHONY : CMakeFiles/skywriting.dir/rule
 
 # Convenience name for target.
-offboard_skywriting: CMakeFiles/offboard_skywriting.dir/rule
-.PHONY : offboard_skywriting
+skywriting: CMakeFiles/skywriting.dir/rule
+.PHONY : skywriting
 
 # clean rule for target.
-CMakeFiles/offboard_skywriting.dir/clean:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/offboard_skywriting.dir/build.make CMakeFiles/offboard_skywriting.dir/clean
-.PHONY : CMakeFiles/offboard_skywriting.dir/clean
+CMakeFiles/skywriting.dir/clean:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/skywriting.dir/build.make CMakeFiles/skywriting.dir/clean
+.PHONY : CMakeFiles/skywriting.dir/clean
 
 #=============================================================================
-# Target rules for target src/CMakeFiles/LetterWaypointLib.dir
+# Target rules for target lib/CMakeFiles/skywriting_lib.dir
 
 # All Build rule for target.
-src/CMakeFiles/LetterWaypointLib.dir/all:
-	$(MAKE) $(MAKESILENT) -f src/CMakeFiles/LetterWaypointLib.dir/build.make src/CMakeFiles/LetterWaypointLib.dir/depend
-	$(MAKE) $(MAKESILENT) -f src/CMakeFiles/LetterWaypointLib.dir/build.make src/CMakeFiles/LetterWaypointLib.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/gordon/gitrepos/mavsdk_skywriting/build/CMakeFiles --progress-num=1,2 "Built target LetterWaypointLib"
-.PHONY : src/CMakeFiles/LetterWaypointLib.dir/all
+lib/CMakeFiles/skywriting_lib.dir/all:
+	$(MAKE) $(MAKESILENT) -f lib/CMakeFiles/skywriting_lib.dir/build.make lib/CMakeFiles/skywriting_lib.dir/depend
+	$(MAKE) $(MAKESILENT) -f lib/CMakeFiles/skywriting_lib.dir/build.make lib/CMakeFiles/skywriting_lib.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/gordon/gitrepos/mavsdk_skywriting/build/CMakeFiles --progress-num=3,4,5,6 "Built target skywriting_lib"
+.PHONY : lib/CMakeFiles/skywriting_lib.dir/all
 
 # Build rule for subdir invocation for target.
-src/CMakeFiles/LetterWaypointLib.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/gordon/gitrepos/mavsdk_skywriting/build/CMakeFiles 2
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 src/CMakeFiles/LetterWaypointLib.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/gordon/gitrepos/mavsdk_skywriting/build/CMakeFiles 0
-.PHONY : src/CMakeFiles/LetterWaypointLib.dir/rule
-
-# Convenience name for target.
-LetterWaypointLib: src/CMakeFiles/LetterWaypointLib.dir/rule
-.PHONY : LetterWaypointLib
-
-# clean rule for target.
-src/CMakeFiles/LetterWaypointLib.dir/clean:
-	$(MAKE) $(MAKESILENT) -f src/CMakeFiles/LetterWaypointLib.dir/build.make src/CMakeFiles/LetterWaypointLib.dir/clean
-.PHONY : src/CMakeFiles/LetterWaypointLib.dir/clean
-
-#=============================================================================
-# Target rules for target src/CMakeFiles/MissionVectorLib.dir
-
-# All Build rule for target.
-src/CMakeFiles/MissionVectorLib.dir/all: src/CMakeFiles/LetterWaypointLib.dir/all
-	$(MAKE) $(MAKESILENT) -f src/CMakeFiles/MissionVectorLib.dir/build.make src/CMakeFiles/MissionVectorLib.dir/depend
-	$(MAKE) $(MAKESILENT) -f src/CMakeFiles/MissionVectorLib.dir/build.make src/CMakeFiles/MissionVectorLib.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/gordon/gitrepos/mavsdk_skywriting/build/CMakeFiles --progress-num=3,4 "Built target MissionVectorLib"
-.PHONY : src/CMakeFiles/MissionVectorLib.dir/all
-
-# Build rule for subdir invocation for target.
-src/CMakeFiles/MissionVectorLib.dir/rule: cmake_check_build_system
+lib/CMakeFiles/skywriting_lib.dir/rule: cmake_check_build_system
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/gordon/gitrepos/mavsdk_skywriting/build/CMakeFiles 4
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 src/CMakeFiles/MissionVectorLib.dir/all
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 lib/CMakeFiles/skywriting_lib.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/gordon/gitrepos/mavsdk_skywriting/build/CMakeFiles 0
-.PHONY : src/CMakeFiles/MissionVectorLib.dir/rule
+.PHONY : lib/CMakeFiles/skywriting_lib.dir/rule
 
 # Convenience name for target.
-MissionVectorLib: src/CMakeFiles/MissionVectorLib.dir/rule
-.PHONY : MissionVectorLib
+skywriting_lib: lib/CMakeFiles/skywriting_lib.dir/rule
+.PHONY : skywriting_lib
 
 # clean rule for target.
-src/CMakeFiles/MissionVectorLib.dir/clean:
-	$(MAKE) $(MAKESILENT) -f src/CMakeFiles/MissionVectorLib.dir/build.make src/CMakeFiles/MissionVectorLib.dir/clean
-.PHONY : src/CMakeFiles/MissionVectorLib.dir/clean
-
-#=============================================================================
-# Target rules for target src/CMakeFiles/TrajectoryLib.dir
-
-# All Build rule for target.
-src/CMakeFiles/TrajectoryLib.dir/all:
-	$(MAKE) $(MAKESILENT) -f src/CMakeFiles/TrajectoryLib.dir/build.make src/CMakeFiles/TrajectoryLib.dir/depend
-	$(MAKE) $(MAKESILENT) -f src/CMakeFiles/TrajectoryLib.dir/build.make src/CMakeFiles/TrajectoryLib.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/gordon/gitrepos/mavsdk_skywriting/build/CMakeFiles --progress-num=5,6 "Built target TrajectoryLib"
-.PHONY : src/CMakeFiles/TrajectoryLib.dir/all
-
-# Build rule for subdir invocation for target.
-src/CMakeFiles/TrajectoryLib.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/gordon/gitrepos/mavsdk_skywriting/build/CMakeFiles 2
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 src/CMakeFiles/TrajectoryLib.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/gordon/gitrepos/mavsdk_skywriting/build/CMakeFiles 0
-.PHONY : src/CMakeFiles/TrajectoryLib.dir/rule
-
-# Convenience name for target.
-TrajectoryLib: src/CMakeFiles/TrajectoryLib.dir/rule
-.PHONY : TrajectoryLib
-
-# clean rule for target.
-src/CMakeFiles/TrajectoryLib.dir/clean:
-	$(MAKE) $(MAKESILENT) -f src/CMakeFiles/TrajectoryLib.dir/build.make src/CMakeFiles/TrajectoryLib.dir/clean
-.PHONY : src/CMakeFiles/TrajectoryLib.dir/clean
-
-#=============================================================================
-# Target rules for target test/CMakeFiles/runTrajectoryTests.dir
-
-# All Build rule for target.
-test/CMakeFiles/runTrajectoryTests.dir/all: src/CMakeFiles/TrajectoryLib.dir/all
-	$(MAKE) $(MAKESILENT) -f test/CMakeFiles/runTrajectoryTests.dir/build.make test/CMakeFiles/runTrajectoryTests.dir/depend
-	$(MAKE) $(MAKESILENT) -f test/CMakeFiles/runTrajectoryTests.dir/build.make test/CMakeFiles/runTrajectoryTests.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/gordon/gitrepos/mavsdk_skywriting/build/CMakeFiles --progress-num=9,10 "Built target runTrajectoryTests"
-.PHONY : test/CMakeFiles/runTrajectoryTests.dir/all
-
-# Build rule for subdir invocation for target.
-test/CMakeFiles/runTrajectoryTests.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/gordon/gitrepos/mavsdk_skywriting/build/CMakeFiles 4
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 test/CMakeFiles/runTrajectoryTests.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/gordon/gitrepos/mavsdk_skywriting/build/CMakeFiles 0
-.PHONY : test/CMakeFiles/runTrajectoryTests.dir/rule
-
-# Convenience name for target.
-runTrajectoryTests: test/CMakeFiles/runTrajectoryTests.dir/rule
-.PHONY : runTrajectoryTests
-
-# clean rule for target.
-test/CMakeFiles/runTrajectoryTests.dir/clean:
-	$(MAKE) $(MAKESILENT) -f test/CMakeFiles/runTrajectoryTests.dir/build.make test/CMakeFiles/runTrajectoryTests.dir/clean
-.PHONY : test/CMakeFiles/runTrajectoryTests.dir/clean
+lib/CMakeFiles/skywriting_lib.dir/clean:
+	$(MAKE) $(MAKESILENT) -f lib/CMakeFiles/skywriting_lib.dir/build.make lib/CMakeFiles/skywriting_lib.dir/clean
+.PHONY : lib/CMakeFiles/skywriting_lib.dir/clean
 
 #=============================================================================
 # Special targets to cleanup operation of make.

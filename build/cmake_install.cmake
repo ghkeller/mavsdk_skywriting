@@ -44,8 +44,7 @@ endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for each subdirectory.
-  include("/home/gordon/gitrepos/mavsdk_skywriting/build/src/cmake_install.cmake")
-  include("/home/gordon/gitrepos/mavsdk_skywriting/build/test/cmake_install.cmake")
+  include("/home/gordon/gitrepos/mavsdk_skywriting/build/lib/cmake_install.cmake")
 
 endif()
 

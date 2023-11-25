@@ -37,7 +37,7 @@ public:
     }
 };
 
-class LetterWaypoints
+class LetterWaypoint
 {
 	private:
 		//variables
@@ -47,7 +47,7 @@ class LetterWaypoints
 
 	public:
 		//constructor/desctructor
-		LetterWaypoints();
+		LetterWaypoint();
 
 		//variables
 		map<char, Letter *> characterLookupTable;

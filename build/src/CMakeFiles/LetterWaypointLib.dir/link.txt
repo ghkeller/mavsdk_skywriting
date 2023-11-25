@@ -1,2 +1,0 @@
-/usr/bin/ar qc libLetterWaypointLib.a CMakeFiles/LetterWaypointLib.dir/LetterWaypoint.cpp.o
-/usr/bin/ranlib libLetterWaypointLib.a

@@ -53,7 +53,7 @@ using std::chrono::seconds;
 #define DELTA_D_APPROX 0.3f // m
 #define ERR_COMP true // should we reset our curves 
 
-mavsdk_skywriting::LetterWaypoints* _letters;
+mavsdk_skywriting::LetterWaypoint* _letters;
 
 using namespace mavsdk_skywriting;
 
@@ -76,7 +76,7 @@ int main(int argc, char** argv)
     ConnectionResult connection_result;
 
     // initialize our lookup table
-    _letters = new LetterWaypoints();
+    _letters = new LetterWaypoint();
 
     
     MissionVector *mission_letters;  
