@@ -3,9 +3,6 @@
 ## Gordon Keller
 ## Rev. 1 1/3/20
 
-### PROJECT BRANCH: PORTING TO A PHYSICAL SYSTEM
-This branch's purpose is to add any additional configurations, changes, scripts, etc. to facilitate running on a physical computer without a companion computer (at least for primary mavros node)
-
 A MAVSDK-based implementation of a multirotor skywriting mode that:
 1. Establishes connection to PX4 system
 2. Takes a string argument of the form 'WRITE THIS' and converts it to waypoints and trajectories
@@ -51,4 +48,7 @@ This command will initialize vehicle takeoff sequence (if not already airborne) 
 - Add safety protocols
 - Create GTests for each library
 - Add external instrument (LED, smoke machine) controls (refer to https://ardupilot.org/copter/docs/common-external-leds.html -- even though this reference is for ardupilot, should be a programming option for PX4)
-
+- add manifold mapping to create a surface to write on in the sky
+- parameterize things like letter max speeds, intensity of letter (i.e., density of smoke plume, or the brightness of leds)
+- for smoke, incorporate logic to have outlet negate vehicle velocity (i.e., point in reverse direction of flight and match the traversal speed to have it stay stagnant in air)
+- add geofencing for safety
