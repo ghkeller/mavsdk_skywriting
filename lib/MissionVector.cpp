@@ -20,8 +20,6 @@
 
 using namespace std;
 
-extern mavsdk_skywriting::LetterWaypoint* _letters;
-
 namespace mavsdk_skywriting {
 
 float MissionVector::getMissionLength() {
@@ -47,7 +45,7 @@ MissionVector::MissionVector(std::string str, float _letter_height,
             continue;
         }
 
-		Letter *new_letter = new Letter(*(_letters->characterLookupTable[c]));
+		Letter *new_letter = new Letter();//*(_letters->characterLookupTable[c])); adding to debug temporarily
         std::cout << "Fetched: " << std::endl;
         new_letter->print();
 		
