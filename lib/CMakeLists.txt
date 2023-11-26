@@ -11,6 +11,7 @@ add_library(skywriting_lib SHARED
     MissionVector.cpp
     LetterWaypoint.cpp
     Trajectory.cpp
+    Primipherals/Primipheral.cpp
     )
 
 get_cmake_property(_variableNames VARIABLES)
