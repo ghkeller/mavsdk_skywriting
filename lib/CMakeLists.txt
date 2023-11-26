@@ -14,12 +14,6 @@ add_library(skywriting_lib SHARED
     Primipherals/Primipheral.cpp
     )
 
-get_cmake_property(_variableNames VARIABLES)
-list (SORT _variableNames)
-foreach (_variableName ${_variableNames})
-    message(STATUS "${_variableName}=${${_variableName}}")
-endforeach()
-
 target_include_directories(skywriting_lib PRIVATE
     ../include  /usr/local/include/mavsdk
     )
