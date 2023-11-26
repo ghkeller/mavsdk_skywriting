@@ -5,6 +5,7 @@ set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
 project(skywriting_project)
 add_subdirectory(lib)
+add_subdirectory(test)
 
 find_package(MAVSDK REQUIRED)
 
