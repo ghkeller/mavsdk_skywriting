@@ -22,6 +22,7 @@ public:
     vector<Trajectory *> trajs; // pointer since abstraction of several different types of Trajs
     float letter_width;
     //constructor 
+    Letter() {}; //adding as an "empty letter"
     Letter(vector<Trajectory *> _trajs,float _letter_width) { trajs = _trajs; letter_width = _letter_width;}
     
     //copy constructor
