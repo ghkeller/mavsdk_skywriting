@@ -1,8 +1,11 @@
 // tests.cpp
-#include <Trajectory.h>
+
+#include <mavsdk/mavsdk.h>
 #include <mavsdk/plugins/offboard/offboard.h>
 #include <mavsdk/plugins/telemetry/telemetry.h>
 #include <gtest/gtest.h>
+
+#include <Trajectory.h>
 
 using namespace mavsdk_skywriting;
 using namespace mavsdk;
@@ -14,17 +17,17 @@ using namespace mavsdk;
  
 TEST(TrajNoPrefTest, Operators) {
 	TrajNoPref *tnp = new TrajNoPref({0.0f,0.0f,0.0f,0.0f});
-	*tnp += Offboard::PositionNEDYaw({0.1f,0.2f,0.3f,0.4f});
+	*tnp += Offboard::PositionNedYaw({0.1f,0.2f,0.3f,0.4f});
     ASSERT_NEAR(0.1f, tnp->target_wp.north_m,ABS_THRES);
     ASSERT_NEAR(0.2f, tnp->target_wp.east_m,ABS_THRES);
     ASSERT_NEAR(0.3f, tnp->target_wp.down_m,ABS_THRES);
     ASSERT_NEAR(0.4f, tnp->target_wp.yaw_deg,ABS_THRES);
-    *tnp += Offboard::PositionNEDYaw({-0.2f,0.5f,1.3f,0.0f});
+    *tnp += Offboard::PositionNedYaw({-0.2f,0.5f,1.3f,0.0f});
     ASSERT_NEAR(-0.1f, tnp->target_wp.north_m,ABS_THRES);
     ASSERT_NEAR(0.7f, tnp->target_wp.east_m,ABS_THRES);
     ASSERT_NEAR(1.6f, tnp->target_wp.down_m,ABS_THRES);
     ASSERT_NEAR(0.4f, tnp->target_wp.yaw_deg,ABS_THRES);
-    *tnp += Telemetry::PositionNED({2.3f,-0.9f,100.1f});
+    *tnp += Telemetry::PositionNed({2.3f,-0.9f,100.1f});
     ASSERT_NEAR(2.2f, tnp->target_wp.north_m,ABS_THRES);
     ASSERT_NEAR(-0.2f, tnp->target_wp.east_m,ABS_THRES);
     ASSERT_NEAR(101.7f, tnp->target_wp.down_m,ABS_THRES);
@@ -38,17 +41,17 @@ TEST(TrajNoPrefTest, Operators) {
 
 TEST(TrajStraightTest, Operators) {
 	TrajStraight *tnp = new TrajStraight({0.0f,0.0f,0.0f,0.0f});
-	*tnp += Offboard::PositionNEDYaw({0.1f,0.2f,0.3f,0.4f});
+	*tnp += Offboard::PositionNedYaw({0.1f,0.2f,0.3f,0.4f});
     ASSERT_NEAR(0.1f, tnp->target_wp.north_m,ABS_THRES);
     ASSERT_NEAR(0.2f, tnp->target_wp.east_m,ABS_THRES);
     ASSERT_NEAR(0.3f, tnp->target_wp.down_m,ABS_THRES);
     ASSERT_NEAR(0.4f, tnp->target_wp.yaw_deg,ABS_THRES);
-    *tnp += Offboard::PositionNEDYaw({-0.2f,0.5f,1.3f,0.0f});
+    *tnp += Offboard::PositionNedYaw({-0.2f,0.5f,1.3f,0.0f});
     ASSERT_NEAR(-0.1f, tnp->target_wp.north_m,ABS_THRES);
     ASSERT_NEAR(0.7f, tnp->target_wp.east_m,ABS_THRES);
     ASSERT_NEAR(1.6f, tnp->target_wp.down_m,ABS_THRES);
     ASSERT_NEAR(0.4f, tnp->target_wp.yaw_deg,ABS_THRES);
-    *tnp += Telemetry::PositionNED({2.3f,-0.9f,100.1f});
+    *tnp += Telemetry::PositionNed({2.3f,-0.9f,100.1f});
     ASSERT_NEAR(2.2f, tnp->target_wp.north_m,ABS_THRES);
     ASSERT_NEAR(-0.2f, tnp->target_wp.east_m,ABS_THRES);
     ASSERT_NEAR(101.7f, tnp->target_wp.down_m,ABS_THRES);
@@ -64,7 +67,7 @@ TEST(TrajCurvedTest, Operators) {
 	TrajCurved *traj = new TrajCurved({0.0f,0.0f,0.0f,0.0f},
 										{-1.0f,20.3f,14.9f,0.0f},
 										TrajCurved::COUNTER_CLOCKWISE);
-	*traj += Offboard::PositionNEDYaw({0.1f,0.2f,0.3f,0.4f});
+	*traj += Offboard::PositionNedYaw({0.1f,0.2f,0.3f,0.4f});
     ASSERT_NEAR(0.1f, traj->target_wp.north_m,ABS_THRES);
     ASSERT_NEAR(0.2f, traj->target_wp.east_m,ABS_THRES);
     ASSERT_NEAR(0.3f, traj->target_wp.down_m,ABS_THRES);
@@ -73,7 +76,7 @@ TEST(TrajCurvedTest, Operators) {
     ASSERT_NEAR(20.5f, traj->center_wp.east_m,ABS_THRES);
     ASSERT_NEAR(15.2f, traj->center_wp.down_m,ABS_THRES);
     ASSERT_NEAR(0.4f, traj->center_wp.yaw_deg,ABS_THRES);
-    *traj += Offboard::PositionNEDYaw({-0.2f,0.5f,1.3f,0.0f});
+    *traj += Offboard::PositionNedYaw({-0.2f,0.5f,1.3f,0.0f});
     ASSERT_NEAR(-0.1f, traj->target_wp.north_m,ABS_THRES);
     ASSERT_NEAR(0.7f, traj->target_wp.east_m,ABS_THRES);
     ASSERT_NEAR(1.6f, traj->target_wp.down_m,ABS_THRES);
@@ -82,7 +85,7 @@ TEST(TrajCurvedTest, Operators) {
     ASSERT_NEAR(21.0f, traj->center_wp.east_m,ABS_THRES);
     ASSERT_NEAR(16.5f, traj->center_wp.down_m,ABS_THRES);
     ASSERT_NEAR(0.4f, traj->center_wp.yaw_deg,ABS_THRES);
-    *traj += Telemetry::PositionNED({2.3f,-0.9f,100.1f});
+    *traj += Telemetry::PositionNed({2.3f,-0.9f,100.1f});
     ASSERT_NEAR(2.2f, traj->target_wp.north_m,ABS_THRES);
     ASSERT_NEAR(-0.2f, traj->target_wp.east_m,ABS_THRES);
     ASSERT_NEAR(101.7f, traj->target_wp.down_m,ABS_THRES);
